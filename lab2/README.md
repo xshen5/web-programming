@@ -1,2 +1,3 @@
-# Finacial Calculator Code Sample
+# CS-546 Lab2
+
 
