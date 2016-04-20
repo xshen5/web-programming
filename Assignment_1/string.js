@@ -9,6 +9,10 @@ var exports = module.exports = {
     randomizeSentences
 }
 
+/*
+* Return how many times a substring occurs in the main string
+*/
+
 function occurrencesOfSubstring(main, substr) {
     if (!main || !substr) {
         throw 'ERROR: Null Argument';
@@ -26,6 +30,10 @@ function occurrencesOfSubstring(main, substr) {
         return 0;
 }
 
+/*
+* Return how many times a substring occurs in the main string, ignore the case
+*/
+
 function occurrencesOfSubstringInsenstive(main, substr) {
     if (!main || !substr) {
         throw 'ERROR: Null Argument';
@@ -34,7 +42,7 @@ function occurrencesOfSubstringInsenstive(main, substr) {
     } else if (main.length < substr.length) {
         return 0;
     }
-    var regex = new RegExp(substr, 'gi'); //create global match using substr, ignor case
+    var regex = new RegExp(substr, 'gi'); //create global match using substr, ignore case
     var matches = main.match(regex);
 
     if (matches != null)
@@ -43,6 +51,9 @@ function occurrencesOfSubstringInsenstive(main, substr) {
         return 0;
 }
 
+/*
+* Take a paragraph, return a new paragraph with all sentences randomly ordered.
+*/
 function randomizeSentences(paragraph) {
     if (!paragraph) {
         throw 'ERROR: Null Argument';

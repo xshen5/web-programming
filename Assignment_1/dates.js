@@ -1,3 +1,7 @@
+/*
+* Intro to node.js
+* Xuanhong Shen
+*/
 var exports = module.exports = {
         daysUntil,
         daysLeftInYear,
