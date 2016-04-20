@@ -5,7 +5,33 @@ var strModule = require("./string.js"),
     dateModule = require("./dates.js");
 
 console.log("All modules have loaded!");
+/*
+* =====================================
+*          dates.js tests
+* =====================================
+*/
+console.log("\n\ndates.js tests:\n");
+//daysUntil
+try{ console.log(dateModule.daysUntil(new Date(2016, 12, 31))); } catch (e) { console.log(e); } // 286 days from April 20th
+try{ console.log(dateModule.daysUntil(null)); } catch (e) { console.log(e); }                   // ERROR: Null Argument
+try{ console.log(dateModule.daysUntil('invalid')); } catch (e) { console.log(e); }             // ERROR: Argument is not a valid instance of Date
+try{ console.log(dateModule.daysUntil(new Date(2015, 12, 31))); } catch (e) { console.log(e); } // ERROR: Invalid Argument
 
+console.log("------------------------------------------------");
+
+//daysLeftInYear
+try{ console.log(dateModule.daysLeftInYear()); } catch (e) { console.log(e); } //286
+
+console.log("------------------------------------------------");
+
+//daysSince
+try{ console.log(dateModule.daysSince(new Date(2015, 12, 31))); } catch (e) { console.log(e); } // 286 days from April 20th
+try{ console.log(dateModule.daysSince(null)); } catch (e) { console.log(e); }                   // ERROR: Null Argument
+try{ console.log(dateModule.daysSince('invalid')); } catch (e) { console.log(e); }             // ERROR: Argument is not a valid instance of Date
+try{ console.log(dateModule.daysSince(new Date(2016, 12, 31))); } catch (e) { console.log(e); } // ERROR: Invalid Argument
+
+console.log("------------------------------------------------");
+ 
 //=====================================
 //         string.js Test
 //=====================================
@@ -32,6 +58,9 @@ console.log(strModule.randomizeSentences("Hello, world! My name is Phil. This is
 try { console.log(strModule.randomizeSentences("+++")); } catch (e) { console.log(e); } // ERROR: no paragraph exists.
 try { console.log(strModule.randomizeSentences()); } catch (e) { console.log(e); }      // ERROR: Null Argument.
 try { console.log(strModule.randomizeSentences(123)); } catch (e) { console.log(e); }   // ERROR: Argument Wrong Type
+
+console.log("------------------------------------------------");
+
 
 /*
 * =====================================
@@ -111,3 +140,5 @@ console.log(numberModule.areaOfCircle(10));                                     
 try { console.log(numberModule.areaOfCircle(-10)); } catch (e) { console.log(e); }          //"ERROR: Negative argument."
 try { console.log(numberModule.areaOfCircle("12")); } catch (e) { console.log(e); }         //"ERROR: Argument not typeof number."
 try { console.log(numberModule.areaOfCircle(null)); } catch (e) { console.log(e); }         //"ERROR: Argument not typeof number."
+
+console.log("------------------------------------------------");
