@@ -14,11 +14,11 @@ var exports = module.exports = {
 function daysUntil(someDate) {
     var today = new Date();
     if (!someDate) {
-        throw "Null Argument";
-    } else if (!someDate instanceof Date) {
-        throw "Argument is not a valid instance of Date";
+        throw "ERROR: Null Argument";
+    } else if (!(someDate instanceof Date)) {
+        throw "ERROR: Argument is not a valid instance of Date";
     } else if (someDate < today) {
-        throw "Invalid argument";
+        throw "ERROR: Invalid argument";
     }
 
     var msPerDay = 1000 * 60 * 60 * 24;
@@ -45,11 +45,11 @@ function daysSince(someDate) {
     var today = new Date();
 
     if (!someDate) {
-        throw "Null Argument";
-    } else if (!someDate instanceof Date) {
-        throw "Argument is not a valid instance of Date";
+        throw "ERROR: Null Argument";
+    } else if (!(someDate instanceof Date)) {
+        throw "ERROR: Argument is not a valid instance of Date";
     } else if (someDate > today) {
-        throw "Invalid argument";
+        throw "ERROR: Invalid argument";
     }
     var msPerDay = 1000 * 60 * 60 * 24;
     var num = Math.floor((today - someDate) / msPerDay);
