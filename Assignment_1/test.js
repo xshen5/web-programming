@@ -7,6 +7,26 @@ var strModule = require("./string.js"),
 console.log("All modules have loaded!");
 /*
 * =====================================
+*          objects.js tests
+* =====================================
+*/
+console.log("\n\nobjects.js tests:\n");
+//shallowClone
+//var car = { one: "one", two: "two", three: "three"};
+try{ console.log(objectModule.shallowClone({ one: "one", two: "two", three: "three"})); } catch (e) { console.log (e); } // { one: "one", two: "two", three: "three"}
+try{ console.log(objectModule.shallowClone(null)); } catch (e) { console.log (e); }                                      // ERROR: Null Argument
+try{ console.log(objectModule.shallowClone({})); } catch (e) { console.log (e); }                                        // {}
+try{ console.log(objectModule.shallowClone("one")); } catch (e) { console.log (e); }                                     // ERROR: Invalid type of argument
+
+console.log("------------------------------------------------");
+
+//deepClone
+try{ console.log(objectModule.deepClone({ make: "Toyota", model: {name: "camry", year: "2014"}})); } catch (e) { console.log(e); } // { make: 'Toyota', model: { name: 'camry', year: '2014' } }
+try{ console.log(objectModule.deepClone({})); } catch (e) { console.log(e); }                                                      // {}
+try{ console.log(objectModule.deepClone(null)); } catch (e) { console.log(e); }                                                    // ERROR: Null Argument
+try{ console.log(objectModule.deepClone("one")); } catch (e) { console.log(e); }                                                   // ERROR: Invalid type of argument
+/*
+* =====================================
 *          dates.js tests
 * =====================================
 */
